@@ -13,7 +13,7 @@ public class SitDown : MonoBehaviour {
     void Update()
     {
 
-        if (Input.acceleration.x <= -1.5f && !PlayerSeated)
+        if (Input.acceleration.x <= -1.4f && !PlayerSeated)
         {
             PlayerSeated = true;
         }

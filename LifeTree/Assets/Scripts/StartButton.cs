@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CanvasButtons : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
+    public GameObject MainMenu;
+
     public GameObject MicController;
     MicControl MicControl;
 
@@ -40,7 +42,13 @@ public class CanvasButtons : MonoBehaviour
 
     public void OnClick()
     {
+        MainMenu.SetActive(false);
+
         Player.GetComponent<PlayerMovement>().enabled = true;
+        Player.GetComponent<RhythmCheck>().enabled = true;
+
+        this.GetComponent<AddOxygen>().enabled = true;
+
     }
 
     public void enterTimer()
