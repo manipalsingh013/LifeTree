@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeTree.CSharp", "LifeTree.CSharp.csproj", "{6F127376-786F-2C41-4B15-A964AC219972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeTree.CSharp.Editor", "LifeTree.CSharp.Editor.csproj", "{D3BDA7AF-B5EA-47CC-5B9C-1EF8BB9DA727}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F127376-786F-2C41-4B15-A964AC219972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F127376-786F-2C41-4B15-A964AC219972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F127376-786F-2C41-4B15-A964AC219972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F127376-786F-2C41-4B15-A964AC219972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BDA7AF-B5EA-47CC-5B9C-1EF8BB9DA727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BDA7AF-B5EA-47CC-5B9C-1EF8BB9DA727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BDA7AF-B5EA-47CC-5B9C-1EF8BB9DA727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BDA7AF-B5EA-47CC-5B9C-1EF8BB9DA727}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

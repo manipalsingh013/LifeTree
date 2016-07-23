@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     MicControl MicControl;
 
     float PlayerSpeed;
+    
     public float MaxSpeedOfPlayer;
+    public float PlayerSpeedFactor;
 
     bool BadBodyPositionToBreathe;
     bool Vibrated;
@@ -35,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Setting player speed
         if (MicControl.loudness > 0.01)
-            PlayerSpeed += 0.005f;
+            PlayerSpeed += PlayerSpeedFactor;
         else
-            PlayerSpeed -= 0.005f;
+            PlayerSpeed -= PlayerSpeedFactor;
 
         // setting constraints on player's speed
         if (PlayerSpeed > MaxSpeedOfPlayer)

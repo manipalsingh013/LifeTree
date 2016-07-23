@@ -8,7 +8,7 @@ public class StartButton : MonoBehaviour
     public GameObject MicController;
     MicControl MicControl;
 
-    public GameObject Player;
+    public GameObject SitDownMenu;
 
     float ExhaleStartTime;
     float ExitTime;
@@ -36,19 +36,15 @@ public class StartButton : MonoBehaviour
 
         if (Entered && Time.time - ExhaleStartTime > 2f && Exhale)
         {
-            OnClick();
+            OnClickStartButton();
         }
     }
 
-    public void OnClick()
+    public void OnClickStartButton()
     {
         MainMenu.SetActive(false);
 
-        Player.GetComponent<PlayerMovement>().enabled = true;
-        Player.GetComponent<RhythmCheck>().enabled = true;
-
-        this.GetComponent<AddOxygen>().enabled = true;
-
+        SitDownMenu.SetActive(true);
     }
 
     public void enterTimer()

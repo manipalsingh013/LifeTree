@@ -6,7 +6,7 @@ public class PlayerPositionChecker : MonoBehaviour
 {
     //public Text Temp;
 
-    public GameObject MainMenu;
+    public GameObject Player;
     public GameObject SitDownMenu;
 
     bool PlayerSeated;
@@ -37,7 +37,7 @@ public class PlayerPositionChecker : MonoBehaviour
             if (Input.acceleration.y <= -1.4f)
             {
                 PlayerSeated = true;
-                GoToMainMenu();
+                StartGame();
 
                 //Handheld.Vibrate();
             }
@@ -55,17 +55,25 @@ public class PlayerPositionChecker : MonoBehaviour
             if (Entered && Time.time - ExhaleStartTime > 2f && Exhale)
             {
                 PlayerSeated = true;
-                GoToMainMenu();
+                StartGame();
             }
         }
     }
     
 
-    void GoToMainMenu()
+    void StartGame()
     {
+        Player.GetComponent<PlayerMovement>().enabled = true;
+        Player.GetComponent<RhythmCheck>().enabled = true;
+
+        this.GetComponent<AddOxygen>().enabled = true;
+
+        this.GetComponent<StartButton>().enabled = false;
+
         SitDownMenu.SetActive(false);
-        MainMenu.SetActive(true);
-        //After player is seated enable main menu
+
+
+        //After player is seated start the game
     }
 
 
