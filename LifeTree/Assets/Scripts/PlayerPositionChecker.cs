@@ -54,10 +54,18 @@ public class PlayerPositionChecker : MonoBehaviour
 
             if (Entered && Time.time - ExhaleStartTime > 2f && Exhale)
             {
+                // Player is seated;
+                PlayTreeSittingAnimation();//provide it proper time to play before turning on any other animations;
+
                 PlayerSeated = true;
                 StartGame();
             }
         }
+    }
+
+    void PlayTreeSittingAnimation()
+    {
+        //Play animtion of tree in which tree is sitting
     }
     
 

@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
         CameraHeadTransform = CameraHead.GetComponent<Transform>();
 
         MicControl = MicController.GetComponent<MicControl>();
+
+        //Play a breathe independent animation of tree in which roots are moving....not sure any such animation will be there.
     }
 
     void Update()
@@ -49,5 +51,39 @@ public class PlayerMovement : MonoBehaviour
             Vibrated = true;
             Handheld.Vibrate();
         }
+        
+        if (MicControl.loudness <= 0.01f)
+        {
+            //player inhaling
+            MoveTentaclesUp();
+            ExpandTrunk();
+
+        }
+        else
+        {
+            //player exhaling
+            MoveTentaclesDown();
+            ContractTrunk();
+        }
+    }
+
+    void MoveTentaclesUp()
+    {
+        //Play Tentacles moving up animation here;
+    }
+
+    void MoveTentaclesDown()
+    {
+        //Play Tentacles moving down animation here;
+    }
+
+    void ContractTrunk()
+    {
+        //Play trunk contraction animation here;
+    }
+
+    void ExpandTrunk()
+    {
+        //Play trunk expansion animation here;
     }
 }
