@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExitButton : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     GameObject MicController;
     MicControl MicControl;
-   
+    
     float ExhaleStartTime;
     float ExitTime;
     bool Entered;
@@ -33,23 +33,26 @@ public class ExitButton : MonoBehaviour
 
         if (Entered && Time.time - ExhaleStartTime > 2f && Exhale)
         {
-            OnClickExitButton();
+            OnClickStartButton();
         }
     }
 
-    public void OnClickExitButton()
+    public void OnClickStartButton()
     {
-        Application.Quit();
+        Debug.Log("clicked");
+        Application.LoadLevel("Game");
     }
 
     public void enterTimer()
     {
+        Debug.Log("Entered");
         Entered = true;
         ExhaleStartTime = Time.time;
     }
 
     public void exitTimer()
     {
+        Debug.Log("Exited");
         Entered = false;
     }
 }
