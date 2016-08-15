@@ -9,6 +9,9 @@ public class PlayerPositionChecker : MonoBehaviour
     public GameObject Player;
     public GameObject SitDownMenu;
 
+    public GameObject TimeText;
+    public GameObject Water;
+
     bool PlayerSeated;
 
     public GameObject MicController;
@@ -74,8 +77,11 @@ public class PlayerPositionChecker : MonoBehaviour
         Player.GetComponent<PlayerMovement>().enabled = true;
         Player.GetComponent<RhythmCheck>().enabled = true;
 
-        this.GetComponent<AddOxygen>().enabled = true;
+        TimeText.SetActive(true);
 
+        Water.GetComponent<IncreaseWaterLevel>().enabled = true;
+
+        this.GetComponent<AddOxygen>().enabled = true;
         this.GetComponent<StartButton>().enabled = false;
 
         SitDownMenu.SetActive(false);

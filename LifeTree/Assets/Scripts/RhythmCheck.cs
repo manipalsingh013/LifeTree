@@ -22,8 +22,10 @@ public class RhythmCheck : MonoBehaviour
     bool rhythem;
 
 
-    public Text temp;
+    //public Text temp;
 
+    public int RhythmicBreathCount = 0;
+    public int NonRhythmicBreathCount = 0;
     // Use this for initialization
     void Awake()
     {
@@ -70,7 +72,10 @@ public class RhythmCheck : MonoBehaviour
         if (currentExhaleTime - previousExhaleTime >= -1.0f && currentExhaleTime - previousExhaleTime <= 1.0f && currentExhaleTime > 1.5f)
         {
             // play positive messages at a min of 9 second interval
-            temp.text = "Breathing is in rhythem";
+
+            //temp.text = "Breathing is in rhythem";
+            RhythmicBreathCount++;
+
             BreathingIsInRyhthem = true;
             if (rhythem == true)
             {
@@ -84,7 +89,8 @@ public class RhythmCheck : MonoBehaviour
             if (getLoudness <= 0.01)
             {
                 BreathingIsInRyhthem = false;
-                temp.text = "Breathing is not in rhythem";
+                //temp.text = "Breathing is not in rhythem";
+                NonRhythmicBreathCount++;
             }
         }
     }
