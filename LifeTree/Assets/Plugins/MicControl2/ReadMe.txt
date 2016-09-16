@@ -1,8 +1,9 @@
 -----------------------------------------------------
 Original source code (java) created by Mark Duisters.
 -----------------------------------------------------
-C# users be sure to move the MicControl folder into Standard Assets folder so you can call the loudness value correclty.
-#"Make sure you are NOT in WEBPLAYER mode". If you want to develop for the web setup everything in "standalone mode", or go to Chapter 3: WebPlayer Setup.
+C# users be sure to move the MicControl folder into Standard Assets or Plugins folder so you can call the loudness and rawInput value correctly.
+#"Make sure you are NOT in WEBPLAYER mode". If you want to develop for the web setup everything in "standalone mode", or go to Chapter 4: WebPlayer Setup.
+" Note that Webplayer support will be dropped in the future as it will be soon depricated by Unity.
 
 ~~ How To Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -20,7 +21,7 @@ Some of you might question why the project is no longer an open source project. 
 made by the users, no one contributed their efforts towards the project, nor did they send their own updates through. 
 
 Those who did contribute and gave credits, thank you. However it was not enough to keep it open source in comparison with those who did not.
-Thus the open source project is closed and all community attributions have been removed and only the original source code that I created is left.
+Thus the open source project is closed and all community attributions have been removed and only the original source code that is created by me is left (starting from version 2.0).
 All this makes everything more manageable for me.
 
 
@@ -31,8 +32,8 @@ The open source MicControl project had a good run, but it is time to move on.
 
 
 
-//There is an example scene delivered with this asset showing  object scaling and movement based on voice strength.
-//there is also a tutorial video.
+//There is an example scene delivered with this asset showing  object scaling and physics movement based on voice strength.
+//there is also a tutorial video (check the website).
 
 //For WebPlayer build !!! you need to add this code http://docs.unity3d.com/412/Documentation/ScriptReference/Application.RequestUserAuthorization.html?from=UserAuthorization
 //This is not included with this asset or the source code because it troubles the normal standalone builds.
@@ -42,9 +43,9 @@ Chapter 2: Explanation of the script variables and functions (how the script wor
 Chapter 3: Examples.
 Chapter 4: WebPLayer setup.
 
-Newest video tutorial: https:https:https://www.youtube.com/watch?v=pD29teWi2fg
-webplayer tutorial: https://www.youtube.com/watch?v=euL41orNfPM&feature=youtu.be
-older video tutorial: http://www.youtube.com/watch?v=VqHYP7iVG3E&feature=youtu.be
+
+
+Video tutorial: http://markduisters.com/2015/11/21/miccontrol-2-tutorials/
 
 
 
@@ -53,23 +54,23 @@ older video tutorial: http://www.youtube.com/watch?v=VqHYP7iVG3E&feature=youtu.b
 
 1. This script allows you to call information from a selected microphone.
 2. The script can detect every microphone attached.
-3. The script finds the volume of sound going through ONLY the selected microphone. (for multiple microphone's use multiple MicControllers).
+3. The script finds the volume of sound going through ONLY the selected microphone. (for multiple microphone's use multiple MicControllers with different slots selected, upt to 6 different devices supported).
 4. The volume of the AudioSource directly affects the loudness variable (can be set in script.)
-5. The system's default microphone is is set as default.
-6. Can call the input loudness from outside the script.(for multiple microphones create  a GameObject variable and call to that specific controller).
+5. The system's default microphone is always set in slot 1.
+6. Can call the input loudness from outside the script.(for multiple microphones create Multiple GameObject variables and call to that specific controller).
 
 
 
 
-A script that allows you to call information from the computers microphone from any script.
+A script that allows you to call information from the computer's microphone from any script (see setup example).
 
-It can recognize up to six different mic's.
-The user can set the Sensitivity and choose to show debug information. Furthermore
-is it possible to print the device number and name of all mic's into the console, this way
-the user knows which slot to select for streaming, then the script knows to which device it should listen.
+MicControl2 can recognize up to six different microphone devices (first six by order of your operating system) per controller.
 
-The maximum spectrum data that gets streamed is by default 256, there is no need to change
-this value unless you really know what you are doing (increasing may cause performance issues).
+The user can set the Sensitivity and choose to show debug information.
+
+The maximum amount of samples that gets streamed is by default 256, there is no need to change
+this value unless you really know what you are doing (increasing may cause performance issues). Larger values
+fill up a bigger float array, increasing precision, which will be used to calculate the loudness variable.
 
 
 "~~ Chapter 1: User accessible variables and functions ~~
@@ -97,20 +98,7 @@ MicControl.MicDeviceGUI (left:float , top:float, width:float, height:float, butt
 "~~ Chapter 2: Explanation of all the variables and functions used in the script ~~
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 variable and function explanation:
-______________________________________________________________________________________________________________________________________________________________________________
-(Unity 4.x users only!!!).
-//visible in editor var's. All vars shown in the editor are to control the input volume/data (read only).
-var ThreeD: This will enable/dissable the 3D audio function. Note that a Microphone can only be 2D and that this effect is achieved by dynamically altering of the AudioSource
-			volume through scripting. 
-			
-var VolumeFallOff: This component will be unlocked when ThreeD is active. Since the the microphone can only handle 2D audio (as mentioned above), the 3D effect is mimiced
-				   by dynamically altering the volume, with the VolumeFallOff parameter you can set how heavy this effect is. A lower value means the audio can be heard from a
-				   greater distance and a higher value means it will dissapear much faster.
-				   
-var PanThreshold: This component will be unlocked when ThreeD is active. As with VolumeFallOff this creates another part of the 3D illusion. This value will determine how
-				  smooth the transition from the left speaker to the right speaker will be.	
-	
-______________________________________________________________________________________________________________________________________________________________________________				  			   
+			  			   
 
 var InputDevice : Select the microphone you want to use (supported up to 6 to choose from). If the device 
 				  has number 1 in the console, you just select default as it is the first device to be found.
@@ -142,14 +130,8 @@ var rawInput:         Used by the editor script to show the unmodified "loudness
 var sensitivity: How sensitive should the input be? 0 will detect nothing, a higher number will give a bigger
 				 loudness value.
 
-var sourceVolume: How load should the script receive my voice/Input? A lower value will result in a smaller loudness
-          		  value. This also influence the hearable audio (from the microphone) ingame if turned on.
 
-
-
-var Mute: This values determine if the user can hear himself or not. With this the user could write a script for multiplayer
-	 	  So that for himself the mute is on but for other players it is not, thus creating a push to talk (this is not
-     	  Included in the script, as the script is created for input 'value's only).
+var Mute: This values determine if the user can hear himself or not.
 
 var debug: Writes the loudness value to the console, this can be used to see when higher pitches are used or
  	  	   whether the device is receiving input or not.
@@ -172,9 +154,6 @@ private var micSelected: This value should be left untouched as it is only used 
 
 private var recording: This value tells the script if the mic is streaming or not.
 
-private var ListenerDistance: this value works together with VolumeFallOff to create the correct volume drop if the MicController source is farther away
-							  from the listerener.
-private var ListenerPosition: this value works with PanThreshold to place the audio in the correct speaker.
 
 private var focused:  Here we have a very important piece, with this the MicController can detect if the application is in use or not. If not
 					  it will stop the stream when the application is not in use and restart/initialize the microphone when the aplication is back in use.
@@ -182,6 +161,8 @@ private var focused:  Here we have a very important piece, with this the MicCont
 					  The usere can also call this value to check wether the application is active is active or not.
 							 
 private var Initialised: Checks if the microphone is initialized, if not it will do so.
+
+var doNotDestroyOnLoad:If enabled this controller will not be destroyed while loading a new scene during runtime.
 
 
 

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof (MicControl))]
@@ -23,6 +23,9 @@ public class BreathingDetection : MonoBehaviour {
 
 	private int varianceUnderThresholdCounter = 0; //counts how many frames the variance spent under threshold
 	private bool fastExhalePossible = false;
+
+	private float[] pastSpectrumData = new float[1024];
+	private float fftDiff;
 
 	// Use this for initialization
 	void Start () {
@@ -87,6 +90,17 @@ public class BreathingDetection : MonoBehaviour {
 			BreathingEvents.TriggerOnInhale(); //Trigger onInhale event
 			
 		}
+	}
+
+	void updateSpectrumData(float[] fftSpectrum){
+		//Debug.Log ("Called" + fftSpectrum[0]);
+		for (int i = 0; i < fftSpectrum.Length; i++) {
+			fftDiff += (Mathf.Log(fftSpectrum [i]+10,2)- Mathf.Log(pastSpectrumData [i]+10,2)); 
+				
+		}
+		//Debug.Log ("FFT DIFF = " + fftDiff);
+		pastSpectrumData = fftSpectrum;
+
 	}
 
 	void updateVariance(){

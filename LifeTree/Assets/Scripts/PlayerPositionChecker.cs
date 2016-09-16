@@ -5,16 +5,15 @@ using UnityEngine.UI;
 public class PlayerPositionChecker : MonoBehaviour
 {
     //public Text Temp;
+    public GameObject MainMenu;
 
     public GameObject Player;
     public GameObject SitDownMenu;
 
-    public GameObject TimeText;
-    public GameObject Water;
+    //public GameObject TimeText;
+    //public GameObject Water;
 
-    bool PlayerSeated;
-
-    public GameObject MicController;
+    GameObject MicController;
     MicControl MicControl;
 
     float ExhaleStartTime;
@@ -26,20 +25,30 @@ public class PlayerPositionChecker : MonoBehaviour
 
     void Start()
     {
-        PlayerSeated = false;
+        MicController = GameObject.FindWithTag("mic");
+        GameData.PlayerSeated = false;
         
         MicControl = MicController.GetComponent<MicControl>();
         Entered = false;
+
+        //if (GameData.PlayerSeated == true)
+        //{
+        //    Debug.Log(GameData.PlayerSeated);
+        //    PlayerSeated = true;
+        //    StartGame();
+
+        //    GetComponent<PlayerPositionChecker>().enabled = false;
+        //}
     }
 
     void Update()
     {
         //Temp.text = Input.acceleration.y + " " + Input.acceleration.y + "  " + Input.acceleration.z ;
-        if (!PlayerSeated)
+        if (!GameData.PlayerSeated)
         {
             if (Input.acceleration.y <= -1.4f)
             {
-                PlayerSeated = true;
+                GameData.PlayerSeated = true;
                 StartGame();
 
                 //Handheld.Vibrate();
@@ -60,7 +69,7 @@ public class PlayerPositionChecker : MonoBehaviour
                 // Player is seated;
                 PlayTreeSittingAnimation();//provide it proper time to play before turning on any other animations;
 
-                PlayerSeated = true;
+                GameData.PlayerSeated = true;
                 StartGame();
             }
         }
@@ -74,20 +83,18 @@ public class PlayerPositionChecker : MonoBehaviour
 
     void StartGame()
     {
+        //After player is seated start the game
         Player.GetComponent<PlayerMovement>().enabled = true;
         Player.GetComponent<RhythmCheck>().enabled = true;
 
-        TimeText.SetActive(true);
+        //TimeText.SetActive(true);
 
-        Water.GetComponent<IncreaseWaterLevel>().enabled = true;
-
-        this.GetComponent<AddOxygen>().enabled = true;
-        this.GetComponent<StartButton>().enabled = false;
-
+        //Water.GetComponent<IncreaseWaterLevel>().enabled = true;
+        
+        this.GetComponent<StartButton>().enabled = true;
+        MainMenu.SetActive(true);
         SitDownMenu.SetActive(false);
 
-
-        //After player is seated start the game
     }
 
 

@@ -1,3 +1,75 @@
+2.6.2
+
+-IMPORTANT!! Dropped WebPlayer support (Unity will soon deprecate  this platform).
+
+-Added Authorization check for mobile platforms. The system will automatically ask permission to use selected Microphone on
+ mobile devices.
+
+-New platform authorization support for the folowing devices: Android, iOS, Windows Phone 8.
+
+-For mobile development always use slot 1 in the controller. On pc's this refers to the default microphone and
+ on mobile platform this refers to the build in microphone.
+
+
+
+
+2.6.1(hotfix)
+
+-fixed wrong privacy status on InitMic function.
+
+
+2.6
+"ATTENTION!! This updates changes allot behind the scenes. This is because Unity version 5.2.x and up have changed the way muting is
+"controlled on an AudioSource. MicControl is dependent on the AudioSource as the recorded data is stored and read in there.
+"MicControl is volume dependent and since muting in these versions lowered the volume. We would no longer be able to have
+"microphone input while muting the actual audio. Resulting in always having playback.
+
+"The system now uses an AudioMixerGroup to control/mute its volume, whilst maintaining data input. Do not worry, the system sets this
+"up automatically!
+
+"The way the Controller is used by you the user, has not changed at all and the old tutorials can still be used. This update will
+"drop support for versions below Unity 5.0 that do not support AudioMixers.
+
+"It is not required, but recommended, to delete older folders of MicControl2 and download a clean version of MicControl 2(clean instalation).
+
+Updates:
+
+-Moved slot selection to the editor script with a enumPopup reference.
+-Unity 5.2.x changed the way data can be gathered from an AudioSource. This causes the system to
+ malfunction when muted (data collection stops). The system now works together with a mixer group, to be able to collect data while muted.
+
+-Mixer group is automatically added. It is best to leave this audio mixer alone. Unless you want to hear your playback. However
+ this can be swiftly controlled with the mute button.
+-Source volume will now always be 1 to make sure the gathered data is correct. Adjust the mixer instead of the AudioSource, to control volume (if you want playback).
+-Removed source volume option in the inspector as it is no longer needed.
+-Mute button now controls mixer volume isntead of AudioSource volume.
+-Mixer features can now be used to control MicControl (playback audio) through custom scripts.
+
+
+-Dropped Unity 4.x functionality and support. This version will not work on version older than Unity 5!
+-Removed 3D (Unity 4.x). If you really need this function (Unity 5.x can set this in the AudioSource itself), you can un-quote it. But this is not recommended.
+
+
+-The recorded clip (which gets feed into the data gatherer) is now only 1 second long instead of 10 seconds.
+ This reduces (the already low) memory footprint even more. Since everything is near real-time anyway, there 
+ was no need to buffer 10 seconds of microphone audio.
+
+-Fixed embarrassing spelling mistake in error log (devies = devices).
+ 
+-Added new example script in the Example code folder. This script lets you interact with the albedo color of a standard material.
+
+-Removed: SourceVolume, PanThreshold, VolumeFallOff,ListenerDistance, ListenerPosition and audioListener as with the Unity 4.x support dropped, these are now depricated.
+
+-Added frequency selection list. Users no longer have to type the frequency manually in the slot.
+-Added frequency selection to the microphone initialisation function.
+
+-Added do not destroy on load option, to make the controller persistent between scenes.
+-Tweaked inspector GUI.
+
+-Sample amount now locked (snapping) to increments ranging from 256 up to 8192 Samples per frame.
+-Sample amount default is now set to 1024
+
+
 
 2.5
 Updates:

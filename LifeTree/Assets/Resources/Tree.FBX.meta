@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: 24dbac76370ce5f45961bc32938e40e1
+timeCreated: 1473077884
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1
+    100002: 1 1
+    100004: 1 10
+    100006: 1 11
+    100008: 1 2
+    100010: 1 3
+    100012: 1 4
+    100014: 1 5
+    100016: 1 6
+    100018: 1 7
+    100020: 1 8
+    100022: 1 9
+    100024: Bone040
+    100026: Bone041
+    100028: Bone042
+    100030: Bone043
+    100032: Bone044
+    100034: Bone045
+    100036: Bone046
+    100038: Bone047
+    100040: Bone048
+    100042: Bone049
+    100044: Bone050
+    100046: Bone051
+    100048: Bone052
+    100050: Bone053
+    100052: Bone054
+    100054: Bone055
+    100056: Bone060
+    100058: Bone061
+    100060: Bone062
+    100062: Bone063
+    100064: Bone073
+    100066: Bone074
+    100068: Bone075
+    100070: Bone076
+    100072: Bone078
+    100074: Bone079
+    100076: Bone080
+    100078: Bone081
+    100080: Bone083
+    100082: Bone084
+    100084: Bone085
+    100086: Bone086
+    100088: Bone088
+    100090: Bone089
+    100092: Bone090
+    100094: Bone091
+    100096: IK Chain001
+    100098: IK Chain002
+    100100: IK Chain003
+    100102: IK Chain004
+    100104: IK Chain005
+    100106: IK Chain006
+    100108: IK Chain007
+    100110: IK Chain008
+    100112: IK Chain009
+    100114: IK Chain010
+    100116: IK Chain011
+    100118: IK Chain012
+    100120: IK Chain013
+    100122: IK Chain014
+    100124: IK Chain015
+    100126: IK Chain016
+    100128: IK Chain017
+    100130: leg 1
+    100132: leg 2
+    100134: leg 3
+    100136: leg 4
+    100138: pCylinder081
+    100140: pCylinder081_MeshPart0
+    100142: pCylinder081_MeshPart1
+    100144: pCylinder081_MeshPart2
+    100146: pivel
+    100148: pivel up 1
+    100150: pivel up 2
+    100152: pivel up 3
+    100154: //RootNode
+    400000: 1
+    400002: 1 1
+    400004: 1 10
+    400006: 1 11
+    400008: 1 2
+    400010: 1 3
+    400012: 1 4
+    400014: 1 5
+    400016: 1 6
+    400018: 1 7
+    400020: 1 8
+    400022: 1 9
+    400024: Bone040
+    400026: Bone041
+    400028: Bone042
+    400030: Bone043
+    400032: Bone044
+    400034: Bone045
+    400036: Bone046
+    400038: Bone047
+    400040: Bone048
+    400042: Bone049
+    400044: Bone050
+    400046: Bone051
+    400048: Bone052
+    400050: Bone053
+    400052: Bone054
+    400054: Bone055
+    400056: Bone060
+    400058: Bone061
+    400060: Bone062
+    400062: Bone063
+    400064: Bone073
+    400066: Bone074
+    400068: Bone075
+    400070: Bone076
+    400072: Bone078
+    400074: Bone079
+    400076: Bone080
+    400078: Bone081
+    400080: Bone083
+    400082: Bone084
+    400084: Bone085
+    400086: Bone086
+    400088: Bone088
+    400090: Bone089
+    400092: Bone090
+    400094: Bone091
+    400096: IK Chain001
+    400098: IK Chain002
+    400100: IK Chain003
+    400102: IK Chain004
+    400104: IK Chain005
+    400106: IK Chain006
+    400108: IK Chain007
+    400110: IK Chain008
+    400112: IK Chain009
+    400114: IK Chain010
+    400116: IK Chain011
+    400118: IK Chain012
+    400120: IK Chain013
+    400122: IK Chain014
+    400124: IK Chain015
+    400126: IK Chain016
+    400128: IK Chain017
+    400130: leg 1
+    400132: leg 2
+    400134: leg 3
+    400136: leg 4
+    400138: pCylinder081
+    400140: pCylinder081_MeshPart0
+    400142: pCylinder081_MeshPart1
+    400144: pCylinder081_MeshPart2
+    400146: pivel
+    400148: pivel up 1
+    400150: pivel up 2
+    400152: pivel up 3
+    400154: //RootNode
+    4300000: pCylinder081_MeshPart0
+    4300002: pCylinder081_MeshPart1
+    4300004: pCylinder081_MeshPart2
+    7400000: Take 001
+    7400002: Expansion
+    7400004: Contraction
+    9500000: //RootNode
+    13700000: pCylinder081_MeshPart0
+    13700002: pCylinder081_MeshPart1
+    13700004: pCylinder081_MeshPart2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      - path: IK Chain005
+        weight: 1
+      - path: IK Chain006
+        weight: 1
+      - path: IK Chain007
+        weight: 1
+      - path: IK Chain008
+        weight: 1
+      - path: IK Chain009
+        weight: 1
+      - path: IK Chain010
+        weight: 1
+      - path: IK Chain011
+        weight: 1
+      - path: IK Chain012
+        weight: 1
+      - path: IK Chain013
+        weight: 1
+      - path: IK Chain014
+        weight: 1
+      - path: IK Chain015
+        weight: 1
+      - path: IK Chain016
+        weight: 1
+      - path: IK Chain017
+        weight: 1
+      - path: pCylinder081
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart0
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart1
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart2
+        weight: 1
+      - path: pivel
+        weight: 1
+      - path: pivel/leg 1
+        weight: 1
+      - path: pivel/leg 1/Bone078
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080/Bone081
+        weight: 1
+      - path: pivel/leg 2
+        weight: 1
+      - path: pivel/leg 2/Bone088
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090/Bone091
+        weight: 1
+      - path: pivel/leg 3
+        weight: 1
+      - path: pivel/leg 3/Bone073
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075/Bone076
+        weight: 1
+      - path: pivel/leg 4
+        weight: 1
+      - path: pivel/leg 4/Bone083
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085/Bone086
+        weight: 1
+      - path: pivel/pivel up 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7/1 10
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6/1 9
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8/1 11
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042/Bone043
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046/Bone047
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050/Bone051
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054/Bone055
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062/Bone063
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Expansion
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      - path: IK Chain005
+        weight: 1
+      - path: IK Chain006
+        weight: 1
+      - path: IK Chain007
+        weight: 1
+      - path: IK Chain008
+        weight: 1
+      - path: IK Chain009
+        weight: 1
+      - path: IK Chain010
+        weight: 1
+      - path: IK Chain011
+        weight: 1
+      - path: IK Chain012
+        weight: 1
+      - path: IK Chain013
+        weight: 1
+      - path: IK Chain014
+        weight: 1
+      - path: IK Chain015
+        weight: 1
+      - path: IK Chain016
+        weight: 1
+      - path: IK Chain017
+        weight: 1
+      - path: pCylinder081
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart0
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart1
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart2
+        weight: 1
+      - path: pivel
+        weight: 1
+      - path: pivel/leg 1
+        weight: 1
+      - path: pivel/leg 1/Bone078
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080/Bone081
+        weight: 1
+      - path: pivel/leg 2
+        weight: 1
+      - path: pivel/leg 2/Bone088
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090/Bone091
+        weight: 1
+      - path: pivel/leg 3
+        weight: 1
+      - path: pivel/leg 3/Bone073
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075/Bone076
+        weight: 1
+      - path: pivel/leg 4
+        weight: 1
+      - path: pivel/leg 4/Bone083
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085/Bone086
+        weight: 1
+      - path: pivel/pivel up 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7/1 10
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6/1 9
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8/1 11
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042/Bone043
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046/Bone047
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050/Bone051
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054/Bone055
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062/Bone063
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Contraction
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      - path: IK Chain005
+        weight: 1
+      - path: IK Chain006
+        weight: 1
+      - path: IK Chain007
+        weight: 1
+      - path: IK Chain008
+        weight: 1
+      - path: IK Chain009
+        weight: 1
+      - path: IK Chain010
+        weight: 1
+      - path: IK Chain011
+        weight: 1
+      - path: IK Chain012
+        weight: 1
+      - path: IK Chain013
+        weight: 1
+      - path: IK Chain014
+        weight: 1
+      - path: IK Chain015
+        weight: 1
+      - path: IK Chain016
+        weight: 1
+      - path: IK Chain017
+        weight: 1
+      - path: pCylinder081
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart0
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart1
+        weight: 1
+      - path: pCylinder081/pCylinder081_MeshPart2
+        weight: 1
+      - path: pivel
+        weight: 1
+      - path: pivel/leg 1
+        weight: 1
+      - path: pivel/leg 1/Bone078
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080
+        weight: 1
+      - path: pivel/leg 1/Bone078/Bone079/Bone080/Bone081
+        weight: 1
+      - path: pivel/leg 2
+        weight: 1
+      - path: pivel/leg 2/Bone088
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090
+        weight: 1
+      - path: pivel/leg 2/Bone088/Bone089/Bone090/Bone091
+        weight: 1
+      - path: pivel/leg 3
+        weight: 1
+      - path: pivel/leg 3/Bone073
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075
+        weight: 1
+      - path: pivel/leg 3/Bone073/Bone074/Bone075/Bone076
+        weight: 1
+      - path: pivel/leg 4
+        weight: 1
+      - path: pivel/leg 4/Bone083
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085
+        weight: 1
+      - path: pivel/leg 4/Bone083/Bone084/Bone085/Bone086
+        weight: 1
+      - path: pivel/pivel up 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1/1 4/1 7/1 10
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 1/1 3/1 6/1 9
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/1 2/1 5/1 8/1 11
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone040/Bone041/Bone042/Bone043
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone044/Bone045/Bone046/Bone047
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone048/Bone049/Bone050/Bone051
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone052/Bone053/Bone054/Bone055
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062
+        weight: 1
+      - path: pivel/pivel up 1/pivel up 2/pivel up 3/Bone060/Bone061/Bone062/Bone063
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
