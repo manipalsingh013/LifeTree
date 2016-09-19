@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SitDown : MonoBehaviour {
-
+public class SitDown : MonoBehaviour
+{
     bool PlayerSeated;
-
     void Start()
     {
         PlayerSeated = false;
@@ -17,5 +16,8 @@ public class SitDown : MonoBehaviour {
         {
             PlayerSeated = true;
         }
+
     }
+
+    
 }

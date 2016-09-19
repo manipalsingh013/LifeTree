@@ -22,9 +22,16 @@ public class PlayerPositionChecker : MonoBehaviour
 
     bool Exhale;
 
+    public GameObject Tree;
+    Animation TreeAnimation;
+    public bool SitOrStandAnimationPlaying;
+    public float FrameRateOfAnimation;
 
     void Start()
     {
+        SitOrStandAnimationPlaying = false;
+        TreeAnimation = Tree.GetComponent<Animation>();
+
         MicController = GameObject.FindWithTag("mic");
         GameData.PlayerSeated = false;
         
@@ -43,6 +50,19 @@ public class PlayerPositionChecker : MonoBehaviour
 
     void Update()
     {
+
+        if (GameData.PlayerSeated && TreeAnimation["Take 001"].time >= 325 / 25)
+        {
+            SitOrStandAnimationPlaying = false;
+            TreeAnimation["Take 001"].speed = 0f;
+        }
+
+        if (!GameData.PlayerSeated && TreeAnimation["Take 001"].time >= 275 / 25)
+        {
+            SitOrStandAnimationPlaying = false;
+            TreeAnimation["Take 001"].speed = 0f;
+        }
+
         //Temp.text = Input.acceleration.y + " " + Input.acceleration.y + "  " + Input.acceleration.z ;
         if (!GameData.PlayerSeated)
         {
@@ -51,15 +71,17 @@ public class PlayerPositionChecker : MonoBehaviour
                 GameData.PlayerSeated = true;
                 StartGame();
 
+                SitOrStandAnimationPlaying = true;
+                PlayTreeSitDownAnimation();
                 //Handheld.Vibrate();
             }
 
-            if (MicControl.loudness > 0.01f && !Exhale)
+            if (MicControl.loudness > 1f && !Exhale)
             {
                 Exhale = true;
                 ExhaleStartTime = Time.time;
             }
-            if (MicControl.loudness <= 0.01f)
+            if (MicControl.loudness <= 1f)
             {
                 Exhale = false;
             }
@@ -71,6 +93,9 @@ public class PlayerPositionChecker : MonoBehaviour
 
                 GameData.PlayerSeated = true;
                 StartGame();
+
+                SitOrStandAnimationPlaying = true;
+                PlayTreeSitDownAnimation();
             }
         }
     }
@@ -107,5 +132,20 @@ public class PlayerPositionChecker : MonoBehaviour
     public void exitTimer()
     {
         Entered = false;
+    }
+
+
+    void PlayTreeSitDownAnimation()
+    {
+        TreeAnimation.Play("Take 001");
+        TreeAnimation["Take 001"].speed = (FrameRateOfAnimation)/25f;
+        TreeAnimation["Take 001"].time = 300 / 25;
+    }
+
+    void PlayTreeStandUpAnimation()
+    {
+        TreeAnimation.Play("Take 001");
+        TreeAnimation["Take 001"].speed = (FrameRateOfAnimation)/25f;
+        TreeAnimation["Take 001"].time = 250 / 25;
     }
 }

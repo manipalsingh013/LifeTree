@@ -16,15 +16,39 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody PlayerRigidbody;
 
     public GameObject Tree;
+    Animation TreeAnimation;
 
     bool InhaleExhaleStarted;
     float InhaleExhaleFrameCount;
 
-    Animator TreeAnimator;
+    bool ExhaleAnimationStarted;
+    bool InhaleAnimationStarted;
+    float InhaleStopTime;
+    float ExhaleStopTime;
+    bool FirstInhaleExhaleDone;
+    bool AnimationStopped;
+
+    /// <summary>
+    /// at some places in this script inhale may be used for exhale and vice versa.
+    /// Sorry for the confusion, will fix the naming once everything else is done.
+    /// </summary>
+
+    public GameObject LifeTree;
+    PlayerPositionChecker PlayerPositionChecker;
+    public float FrameRateOfAnimation;
 
     void Start()
     {
-        TreeAnimator = Tree.GetComponent<Animator>();
+        PlayerPositionChecker = LifeTree.GetComponent<PlayerPositionChecker>();
+
+        FirstInhaleExhaleDone = false;
+        ExhaleAnimationStarted = false;
+        InhaleAnimationStarted = false;
+
+        InhaleStopTime = 0f;
+        ExhaleStopTime = 1.04166f;
+
+        TreeAnimation = Tree.GetComponent<Animation>();
 
         InhaleExhaleStarted = true;
 
@@ -44,9 +68,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(TreeAnimation["Take 001"].normalizedTime);
+
         transform.RotateAround(Vector3.zero, Vector3.up, RotationSpeed * Time.deltaTime);
 
-        //Vibrate handheld if it see down or up
         if ((CameraHeadTransform.localEulerAngles.x >= 45 && CameraHeadTransform.localEulerAngles.x <= 90)
             || (CameraHeadTransform.localEulerAngles.x >= 270 && CameraHeadTransform.localEulerAngles.x <= 325))
         {
@@ -63,20 +88,51 @@ public class PlayerMovement : MonoBehaviour
             Vibrated = true;
             Handheld.Vibrate();
         }
-        
-        if (MicControl.loudness <= 1f)
-        {
-            //player inhaling
-            MoveTentaclesUp();
 
-            ExpandTrunk();
-        }
-        else
-        {
-            //player exhaling
-            MoveTentaclesDown();
 
-            ContractTrunk();
+        if (PlayerPositionChecker.SitOrStandAnimationPlaying == false)
+        {
+            if (MicControl.loudness > 1f && InhaleAnimationStarted == false)
+            {
+                if (FirstInhaleExhaleDone == true && TreeAnimation["Take 001"].speed != 0)
+                {
+                    ExhaleStopTime = TreeAnimation["Take 001"].time;
+                }
+                //player inhaling
+                FirstInhaleExhaleDone = true;
+                InhaleAnimationStarted = true;
+                ExhaleAnimationStarted = false;
+
+                MoveTentaclesUp();
+                ContractTrunk();
+            }
+            else if (MicControl.loudness <= 1f && ExhaleAnimationStarted == false)
+            {
+                if (FirstInhaleExhaleDone == true && TreeAnimation["Take 001"].speed != 0)
+                {
+                    InhaleStopTime = TreeAnimation["Take 001"].time;
+                }
+                //player exhaling
+                FirstInhaleExhaleDone = true;
+                ExhaleAnimationStarted = true;
+                InhaleAnimationStarted = false;
+
+                MoveTentaclesDown();
+                ExpandTrunk();
+            }
+
+
+            if (InhaleAnimationStarted == true && TreeAnimation["Take 001"].time <= 0f)
+            {
+                InhaleStopTime = 0f;
+                TreeAnimation["Take 001"].speed = 0f;
+            }
+
+            if (ExhaleAnimationStarted == true && TreeAnimation["Take 001"].time >= 1.04166f)
+            {
+                ExhaleStopTime = 1.04166f;
+                TreeAnimation["Take 001"].speed = 0f;
+            }
         }
     }
 
@@ -93,55 +149,20 @@ public class PlayerMovement : MonoBehaviour
     void ContractTrunk()
     {
         Debug.Log("play contraction animation");
-
-        //if (InhaleExhaleStarted)
-        //{
-        //    //expanding for first time
-        //    InhaleExhaleFrameCount = 1f;
-        //    InhaleExhaleStarted = false;
-        //}
-
-        //if (Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-        //{
-        //    Debug.Log("contract" + Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime);
-        //    TreeAnimator.speed = 1;
-        TreeAnimator.Play("Contraction",0,0);
-        //}
-        //else //if (Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime < 0f)
-        //{
-        //    Debug.Log("Stop expamsion");
-        //    InhaleExhaleFrameCount = 0f;
-        //    TreeAnimator.Stop();
-        //}
-
+        TreeAnimation.Play("Take 001");
+        TreeAnimation["Take 001"].speed = -(FrameRateOfAnimation/25f);
+        TreeAnimation["Take 001"].time = ExhaleStopTime;
         //Play trunk contraction animation here;
     }
 
     void ExpandTrunk()
     {
         Debug.Log("play expansion animation");
-
-        //if (InhaleExhaleStarted)
-        //{
-        //    //expanding for first time
-        //    InhaleExhaleFrameCount = 0f;
-        //    InhaleExhaleStarted = false;
-        //}
-        
-        //if (Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0)
-        //{
-        //    Debug.Log("expand" + Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime);
-            
-        //    TreeAnimator.speed = -1;
-        TreeAnimator.Play("Expansion", 0, 0);
-        //}
-        //else //if (Tree.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0)
-        //{
-        //    Debug.Log("Stop expamsion");
-        //    InhaleExhaleFrameCount = 1.0f;
-        //    TreeAnimator.Stop();
-        //}
-         
+        TreeAnimation.Play("Take 001");
+        TreeAnimation["Take 001"].speed = (FrameRateOfAnimation/25f);
+        TreeAnimation["Take 001"].time = InhaleStopTime;
         //Play trunk expansion animation here;
     }
 }
+
+

@@ -1,0 +1,14 @@
+00  to 25  breath in
+25  to 50  breath out
+50  to 75  bend R side
+75  to 100 normal
+100 to 125 bend L side
+125 to 150 normal
+150 to 175 bend Back side
+175 to 200 normal 
+200 to 225 bend Front side
+225 to 250 normal
+250 to 275 stand up
+275 to 300 normal
+300 to 325 sit down
+325 to 350 normal

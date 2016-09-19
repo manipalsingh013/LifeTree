@@ -75,7 +75,7 @@ public class TimeLeft : MonoBehaviour {
                 Rend2.materials[i].SetColor("_Color", GrayScaleColor);
             }
 
-            Debug.Log(GrayScaleColor);
+            //Debug.Log(GrayScaleColor);
         }
         else
         {

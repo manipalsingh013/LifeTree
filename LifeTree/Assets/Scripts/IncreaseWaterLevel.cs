@@ -4,23 +4,25 @@ using System.Collections;
 public class IncreaseWaterLevel : MonoBehaviour {
 
     /// <summary>
-    /// water level change between -2.5 and 1.65 in a total of 300 second, so have to provide water gameObject some speed in Y direction and it work;
-    /// speed = (2.5+1.65)/300
-    /// speed = 0.013833;
+    /// water level change between 0 and 1.25 in a total of 180 second, so have to provide water gameObject some speed in Y direction and it work;
+    /// speed = (1.25)/180
     /// </summary>
 
-    float speed = 0.02f; //0.013833f;
+    float speed = 1.25f / 180f;
+
+    bool StoppedWaterIncrease;
 
     void Start ()
     {
-        gameObject.transform.position = new Vector3(0f, -2.5f, 0f);
+        StoppedWaterIncrease = false;
         GetComponent<Rigidbody>().velocity = new Vector3(0f, speed, 0f);
 	}
 	
 	void Update ()
     {
-        if (transform.position.y >= 1.65)
+        if (transform.localPosition.y >= 2 && !StoppedWaterIncrease)
         {
+            StoppedWaterIncrease = true;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
 	}
