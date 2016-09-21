@@ -32,12 +32,12 @@ public class StartButton : MonoBehaviour
 
     void Update()
     {
-        if (MicControl.loudness > 0.01f && !Exhale)
+        if (MicControl.loudness > 1f && !Exhale)
         {
             Exhale = true;
             ExhaleStartTime = Time.time;
         }
-        if (MicControl.loudness <= 0.01f)
+        if (MicControl.loudness <= 1f)
         {
             Exhale = false;
         }

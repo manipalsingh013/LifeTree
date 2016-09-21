@@ -6,8 +6,6 @@ public class PlayerPositionChecker : MonoBehaviour
 {
     //public Text Temp;
     public GameObject MainMenu;
-
-    public GameObject Player;
     public GameObject SitDownMenu;
 
     //public GameObject TimeText;
@@ -109,8 +107,6 @@ public class PlayerPositionChecker : MonoBehaviour
     void StartGame()
     {
         //After player is seated start the game
-        Player.GetComponent<PlayerMovement>().enabled = true;
-        Player.GetComponent<RhythmCheck>().enabled = true;
 
         //TimeText.SetActive(true);
 

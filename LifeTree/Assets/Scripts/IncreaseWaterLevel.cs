@@ -8,7 +8,7 @@ public class IncreaseWaterLevel : MonoBehaviour {
     /// speed = (1.25)/180
     /// </summary>
 
-    float speed = 1.25f / 180f;
+    float speed = 1.25f / 150f;
 
     bool StoppedWaterIncrease;
 
@@ -20,10 +20,14 @@ public class IncreaseWaterLevel : MonoBehaviour {
 	
 	void Update ()
     {
-        if (transform.localPosition.y >= 2 && !StoppedWaterIncrease)
+        if (transform.localPosition.y >= 1.25f && !StoppedWaterIncrease)
         {
             StoppedWaterIncrease = true;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(0f, speed, 0f);
         }
 	}
 }
