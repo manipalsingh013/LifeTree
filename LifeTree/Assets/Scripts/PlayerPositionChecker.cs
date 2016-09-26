@@ -24,9 +24,13 @@ public class PlayerPositionChecker : MonoBehaviour
     Animation TreeAnimation;
     public bool SitOrStandAnimationPlaying;
     public float FrameRateOfAnimation;
+    float AnimationStartTime;
+    bool SitDownAnimationPlayed;
 
     void Start()
     {
+        SitDownAnimationPlayed = false;
+        AnimationStartTime = 0f;
         SitOrStandAnimationPlaying = false;
         TreeAnimation = Tree.GetComponent<Animation>();
 
@@ -64,13 +68,13 @@ public class PlayerPositionChecker : MonoBehaviour
         //Temp.text = Input.acceleration.y + " " + Input.acceleration.y + "  " + Input.acceleration.z ;
         if (!GameData.PlayerSeated)
         {
-            if (Input.acceleration.y <= -1.4f)
+            if (Input.acceleration.y <= -1.1f)
             {
                 GameData.PlayerSeated = true;
-                StartGame();
-
-                SitOrStandAnimationPlaying = true;
                 PlayTreeSitDownAnimation();
+                AnimationStartTime = Time.time;
+
+                SitDownMenu.SetActive(false);
                 //Handheld.Vibrate();
             }
 
@@ -87,23 +91,23 @@ public class PlayerPositionChecker : MonoBehaviour
             if (Entered && Time.time - ExhaleStartTime > 2f && Exhale)
             {
                 // Player is seated;
-                PlayTreeSittingAnimation();//provide it proper time to play before turning on any other animations;
+                //provide it proper time to play before turning on any other animations;
 
                 GameData.PlayerSeated = true;
-                StartGame();
-
-                SitOrStandAnimationPlaying = true;
                 PlayTreeSitDownAnimation();
+                AnimationStartTime = Time.time;
+
+                SitDownMenu.SetActive(false);
             }
         }
-    }
 
-    void PlayTreeSittingAnimation()
-    {
-        //Play animtion of tree in which tree is sitting
+        if (GameData.PlayerSeated == true && !SitDownAnimationPlayed && Time.time>AnimationStartTime+2f)
+        {
+            StartGame();
+            SitOrStandAnimationPlaying = true;
+            SitDownAnimationPlayed = true;
+        }
     }
-    
-
     void StartGame()
     {
         //After player is seated start the game
@@ -114,8 +118,6 @@ public class PlayerPositionChecker : MonoBehaviour
         
         this.GetComponent<StartButton>().enabled = true;
         MainMenu.SetActive(true);
-        SitDownMenu.SetActive(false);
-
     }
 
 

@@ -8,6 +8,7 @@ public class TimeLeft : MonoBehaviour {
     Text Text;
 
     public int TotalTime = 300;//in seconds
+    public bool StartBlurringEffect;
 
     public GameObject MainMenu;
     public GameObject Player;
@@ -30,9 +31,17 @@ public class TimeLeft : MonoBehaviour {
     public GameObject FallingLeaves04;
     bool LeavesParticleEffectStart;
 
+    public GameObject LifeTreeAudioSource;
+    bool BackgroundMusicEnabled = false;
 
+    public GameObject EndMusic;
     void Start()
     {
+        BackgroundMusicEnabled = false;
+        this.GetComponent<AudioSource>().Play();
+        LifeTreeAudioSource.SetActive(false);
+        StartBlurringEffect = false;
+
         LeavesParticleEffectStart = false;
         GrayScaleColor = Color.black;
 
@@ -51,7 +60,24 @@ public class TimeLeft : MonoBehaviour {
         int sec = (int)((TotalTime - (Time.time - StartTime)) % 60);
         Text.text = "Practice Time Left\n" + min.ToString("00") + " : " + sec.ToString("00");
 
-        if ((Time.time - StartTime) >= 135f && LeavesParticleEffectStart == false)
+        if (Time.time - StartTime > 20f && !StartBlurringEffect)
+        {
+            StartBlurringEffect = true;
+        }
+
+        if (Time.time - StartTime > 30f && !BackgroundMusicEnabled)
+        {
+            BackgroundMusicEnabled = true;
+            LifeTreeAudioSource.SetActive(true);
+        }
+
+        if (Time.time -StartTime > 43.5f)
+        {
+            this.GetComponent<AudioSource>().enabled = false;
+        }
+
+
+        if ((Time.time - StartTime) >= 130f && LeavesParticleEffectStart == false)
         {
             //75% of time is done, start leaves particles effect.
             FallingLeaves01.SetActive(true);
@@ -79,6 +105,8 @@ public class TimeLeft : MonoBehaviour {
         }
         else
         {
+            EndMusic.SetActive(true);
+
             FeedbackText.text = "Rhythmic Breath :" + RhythmCheck.RhythmicBreathCount + "\n" +
                                     "Non Rhythmic Breath :" + RhythmCheck.NonRhythmicBreathCount;
 
