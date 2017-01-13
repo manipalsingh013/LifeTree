@@ -115,7 +115,7 @@ public class RhythmCheck : MonoBehaviour
         }
 
 
-        if (currentExhaleTime - previousExhaleTime >= -1.0f && currentExhaleTime - previousExhaleTime <= 1.0f && currentExhaleTime > 1.5f)
+        if (currentExhaleTime - previousExhaleTime >= -2.0f && currentExhaleTime - previousExhaleTime <= 2.0f && currentExhaleTime > 1f)
         {
             // play positive messages at a min of 9 second interval
             //temp.text = "Breathing is in rhythem";
@@ -135,7 +135,7 @@ public class RhythmCheck : MonoBehaviour
                 RhythemTrueTime = Time.time;
             }
         }
-        else if (Time.time - RhythemTrueTime >= 7f || (((currentExhaleTime - previousExhaleTime <= -2.0f && currentExhaleTime - previousExhaleTime >= 2.0f) || currentExhaleTime < 0.5f)))
+        else if (Time.time - RhythemTrueTime >= 5f || (((currentExhaleTime - previousExhaleTime <= -2.0f && currentExhaleTime - previousExhaleTime >= 2.0f) || currentExhaleTime < 0.5f)))
         {
             rhythem = false;//not actually rhythem but !rhythem
             if (getLoudness <= 1)

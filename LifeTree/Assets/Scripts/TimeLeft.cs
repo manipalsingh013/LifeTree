@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class TimeLeft : MonoBehaviour {
 
@@ -34,9 +35,24 @@ public class TimeLeft : MonoBehaviour {
     public GameObject LifeTreeAudioSource;
     bool BackgroundMusicEnabled = false;
 
+    AudioSource PursedLipBreathing;
+    bool PursedLipBreathingMusicEnabled;
+
     public GameObject EndMusic;
+
+    public GameObject MainCameraRight;
+    public GameObject MainCameraLeft;
+    BlurOptimized BlurOptimizedRight;
+    BlurOptimized BlurOptimizedLeft;
     void Start()
     {
+        BlurOptimizedLeft = MainCameraLeft.GetComponent<BlurOptimized>();
+        BlurOptimizedRight = MainCameraRight.GetComponent<BlurOptimized>();
+
+        PursedLipBreathing = GetComponent<AudioSource>();
+        PursedLipBreathing.enabled = false;
+        PursedLipBreathingMusicEnabled = false;
+
         BackgroundMusicEnabled = false;
         this.GetComponent<AudioSource>().Play();
         LifeTreeAudioSource.SetActive(false);
@@ -71,9 +87,16 @@ public class TimeLeft : MonoBehaviour {
             LifeTreeAudioSource.SetActive(true);
         }
 
-        if (Time.time -StartTime > 43.5f)
+        if (Time.time -StartTime > 46.5f)
         {
-            this.GetComponent<AudioSource>().enabled = false;
+            PursedLipBreathing.enabled = false;
+        }
+
+        if (Time.time - StartTime > 2f && !PursedLipBreathingMusicEnabled)
+        {
+            PursedLipBreathingMusicEnabled = true;
+            PursedLipBreathing.enabled = true;
+            PursedLipBreathing.Play();
         }
 
 
@@ -105,6 +128,11 @@ public class TimeLeft : MonoBehaviour {
         }
         else
         {
+            RhythmCheck.enabled = false;
+
+            BlurOptimizedLeft.enabled = false;
+            BlurOptimizedRight.enabled = false;
+
             EndMusic.SetActive(true);
 
             FeedbackText.text = "Rhythmic Breath :" + RhythmCheck.RhythmicBreathCount + "\n" +
