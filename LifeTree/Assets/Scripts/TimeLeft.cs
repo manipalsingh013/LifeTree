@@ -68,13 +68,14 @@ public class TimeLeft : MonoBehaviour {
         StartTime = Time.time;
         Text = GetComponent<Text>();
         RhythmCheck = Player.GetComponent<RhythmCheck>();
+        Text.text = "";
     }
 	
 	void Update ()
     {
         int min = (int)((TotalTime - (Time.time - StartTime)) / 60);
         int sec = (int)((TotalTime - (Time.time - StartTime)) % 60);
-        Text.text = "Practice Time Left\n" + min.ToString("00") + " : " + sec.ToString("00");
+        //Text.text = "Practice Time Left\n" + min.ToString("00") + " : " + sec.ToString("00");
 
         if (Time.time - StartTime > 20f && !StartBlurringEffect)
         {
