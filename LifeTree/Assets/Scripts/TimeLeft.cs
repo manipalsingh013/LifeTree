@@ -82,13 +82,13 @@ public class TimeLeft : MonoBehaviour {
             StartBlurringEffect = true;
         }
 
-        if (Time.time - StartTime > 30f && !BackgroundMusicEnabled)
+        if (Time.time - StartTime > 25f && !BackgroundMusicEnabled)
         {
             BackgroundMusicEnabled = true;
             LifeTreeAudioSource.SetActive(true);
         }
 
-        if (Time.time -StartTime > 46.5f)
+        if (Time.time -StartTime > 60.52f)
         {
             PursedLipBreathing.enabled = false;
         }
